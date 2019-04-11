@@ -29,6 +29,14 @@ createProfile = (newProfile) => {
   }).catch(err => console.log('we have a problem:', err))
 }
 
+updateProfile = (profile) => {
+  axios.put(`/api/profiles/${profile.id}`, profile).then(res => {
+    this.setState({
+      profiles: res.data
+    })
+  }).catch(err => console.log('we have a problem:', err))
+}
+
 render() {
   return(
     <div>
@@ -37,6 +45,7 @@ render() {
         return <Profile 
           key={profile.id}
           profile={profile}
+          updateProfile={this.updateProfile}
           />
     })}
     </div>

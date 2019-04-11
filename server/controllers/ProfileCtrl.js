@@ -11,7 +11,7 @@ let profiles = [
   },
   {
     id: id++,
-    profileLabel: 'CEO',
+    profileTitle: 'CEO',
     profileIntro: 'Highly proficient negotiation and persuasion skills make it easy to come to agreements and persuade people, organizations, and vendors to meet the company in the middle.',
     mugUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgzAP0pajttETufh3jUPenUNDJ7UwAN6aoHhBV71SagTop2gxU',
     profileCost: 28,
@@ -30,12 +30,14 @@ module.exports = {
     res.send(profiles)
   },
   update: (req, res) => {
+    //console.log(req.params)
     let { id } = req.params
     let updateProfile = req.body
     updateProfile.id = id
+    //console.log(updateProfile.id)
 
     let index = profiles.findIndex(a => +a.id === +id)
-
+    
     profiles.splice(index, 1, updateProfile)
     res.send(profiles)
   }
