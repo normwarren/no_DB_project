@@ -28,5 +28,15 @@ module.exports = {
 
     profiles.push(newProfile)
     res.send(profiles)
+  },
+  update: (req, res) => {
+    let { id } = req.params
+    let updateProfile = req.body
+    updateProfile.id = id
+
+    let index = profiles.findIndex(a => +a.id === +id)
+
+    profiles.splice(index, 1, updateProfile)
+    res.send(profiles)
   }
   }
