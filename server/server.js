@@ -9,6 +9,7 @@ app.use(express.json())
 app.get('/api/profiles', ProfileCtrl.get)
 app.post('/api/profiles', ProfileCtrl.create)
 app.put('/api/profiles/:id', ProfileCtrl.update)
+app.delete('/api/profiles/:id', ProfileCtrl.delete)
 
 app.listen(port, () => {
   console.log('listening on port', port)

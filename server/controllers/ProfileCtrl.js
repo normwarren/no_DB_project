@@ -40,5 +40,21 @@ module.exports = {
     
     profiles.splice(index, 1, updateProfile)
     res.send(profiles)
+  },
+  delete: (req, res) => {
+    //console.log(req.params)
+    let { id } = req.params
+    let updateProfile = req.body
+    updateProfile.id = id
+    //console.log(updateProfile.id)
+
+    let index = profiles.findIndex(a => +a.id === +id)
+    
+    profiles.splice(index, 1)
+    res.send(profiles)
+    // console.log(deleteProfile.id)
+    // console.log(id)
+    // console.log(index)
   }
+
   }

@@ -15,7 +15,10 @@ export default class Profile extends Component {
       edit: !this.state.edit 
     })
   }
-
+  handleClick = () => {
+    let { profile } = this.props
+    this.props.deleteProfile(profile)
+  }
 
   render() {
     console.log(this.props)
@@ -31,7 +34,7 @@ export default class Profile extends Component {
         <p>Mentor Cost: {profile.profileCost} </p>
         <p>Profile Ratings: {profile.profileRatings} </p>
         <button onClick={this.toggleEdit}>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => this.handleClick()}>Delete</button>
       </div>
     )
   }
