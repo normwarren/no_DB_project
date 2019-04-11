@@ -5,11 +5,11 @@ export default class CreateProfileForm extends Component {
     super()
 
     this.state = {
-      title: '', 
-      intro: '', 
+      profileTitle: '', 
+      profileIntro: '', 
       mugUrl: '',
-      cost: 0, 
-      rates: 0
+      profileCost: 0, 
+      profileRatings: 0
     }
   }
   handleChange = (e) => {
@@ -29,14 +29,14 @@ export default class CreateProfileForm extends Component {
       <div style={{border: '1px solid black', margin: 20}}>
         <input
         onChange={this.handleChange}
-        name='title'
+        name='profileTitle'
         type='text'
         placeholder='title'/>
         <input
         onChange={this.handleChange}
-        name='intro'
+        name='profileIntro'
         type='text'
-        placeholder='intro'/>
+        placeholder='profileIntro'/>
                 <input
         onChange={this.handleChange}
         name='mugUrl'
@@ -44,12 +44,12 @@ export default class CreateProfileForm extends Component {
         placeholder='mugUrl'/>
                 <input
         onChange={this.handleChange}
-        name='cost'
+        name='profileCost'
         type='text'
         placeholder='cost'/>
                 <input
         onChange={this.handleChange}
-        name='rates'
+        name='profileRatings'
         type='text'
         placeholder='rates'/>
         <button onClick={this.handleClick}>add a profile</button>

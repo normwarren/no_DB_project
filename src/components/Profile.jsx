@@ -7,8 +7,10 @@ export default class Profile extends Component {
     return(
       <div style={{border: '1px solid #eee', margin: 10}}>
        <img src={profile.mugUrl} alt="profile_image" width="200"/>
-        <p>Profile Title: {profile.title} </p>
-        <p>Profile Intro: {profile.intro} </p>
+        <p>Profile Title: {profile.profileTitle} </p>
+        <p>Profile Intro: {profile.profileIntro} </p>
+        <p>Mentor Cost: {profile.profileCost} </p>
+        <p>Profile Ratings: {profile.profileRatings} </p>
         <button>Edit</button>
         <button>Delete</button>
       </div>
