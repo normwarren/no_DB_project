@@ -34,18 +34,21 @@ export default class Profile extends Component {
       <table className='ProfileTable' style={{width: '100%',  cellpadding: 4}}>
       <tbody>
         <tr>
-            <td><div><b>{profile.profileTitle}</b></div>
+            <td width="10%"> <div><b>{profile.profileTitle}</b></div>
               <div>
               	<img src={profile.mugUrl} alt="profile_image" width="150"/>
               </div>
               
-              <button onClick={this.toggleEdit}>Edit</button>
+              <button backgroundColor="rgb(150, 182, 204)" onClick={this.toggleEdit}>Edit</button>
               <button onClick={this.handleClick}>Delete</button>
             </td>
-            <td>{profile.profileIntro} </td>
-            <td>{profile.profileCost} </td>
-            <td>{profile.profileRatings} </td>
+            <td className="profileIntro" width="60%"><div>
+              {profile.profileIntro}
+            </div> </td>
+            <td width="5%">{profile.profileCost} </td>
+            <td width="7%">{profile.profileRatings} </td>
         </tr>
+        
       </tbody>
       </table>
       </div>

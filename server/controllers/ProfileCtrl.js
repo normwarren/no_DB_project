@@ -17,11 +17,20 @@ let profiles = [
     profileCost: 28,
     profileRatings: 5, 
     numRatings: 2,
+  },
+  {
+    id: id++,
+    profileTitle: 'Data Pro',
+    profileIntro: '5 years experience implementing data warehouse in the cloud.',
+    mugUrl: 'https://github.com/normwarren/images/blob/master/DataWarehouseGuy.png?raw=true ',
+    profileCost: 35,
+    profileRatings: 5, 
+    numRatings: 2,
   }
 ]
 module.exports = {
 
-  get: (req, res) => {
+  get: (req, res, next) => {
 
     let newProfiles = profiles;
     if(req.query.profileTitle) {
@@ -29,8 +38,8 @@ module.exports = {
         return el.profileTitle === req.query.profileTitle;
       })
       res.send(newProfiles)
-    }
-    res.send(profiles)
+    } else {res.send(profiles)}
+    
   },
 
   create: (req, res) => {

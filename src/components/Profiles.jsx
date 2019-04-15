@@ -50,13 +50,14 @@ render() {
   return(
     <div>
     <CreateProfileForm createProfile={this.createProfile}/>
-    <table style={{width: '100%',  cellpadding: 4}}>
+    <table className="Profile" style={{width: '100%',  cellpadding: 4}}>
     <tbody>
       <tr>
-          <th>Title</th>
-          <th>Highlights</th>
-          <th>Charge </th>
-          <th>Ratings</th>
+          <th width="10%">Title</th>
+          <th alignText="left" width="50%">Highlights</th>
+          <th width="5%">Charge </th>
+          <th width="5%">Ratings</th>
+
       </tr>
     </tbody>
     </table>
@@ -68,6 +69,21 @@ render() {
           deleteProfile={this.deleteProfile}
           />
     })}
+
+    <div>
+      <table className = "Footer" >
+    <thead>
+
+    </thead>
+    <tfoot>
+    <tr>
+    <td colSpan="4">
+    <div className="links"><a href="#">&laquo;</a> <a className="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+    </td>
+    </tr>
+    </tfoot>
+    </table>
+    </div>
     </div>
   )
 }
