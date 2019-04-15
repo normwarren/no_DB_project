@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './profileTable.css'
 
 import Profile from './Profile'
 import CreateProfileForm from './CreateProfile'
@@ -38,7 +39,7 @@ updateProfile = (profile) => {
 }
 
 deleteProfile = (profile) => {
-  axios.delete(`/api/profiles/${profile.id}`, profile).then(res => {
+  axios.delete(`/api/profiles/${profile.id}`).then(res => {
     this.setState({
       profiles: res.data
     })
@@ -49,6 +50,16 @@ render() {
   return(
     <div>
     <CreateProfileForm createProfile={this.createProfile}/>
+    <table style={{width: '100%',  cellpadding: 4}}>
+    <tbody>
+      <tr>
+          <th>Title</th>
+          <th>Highlights</th>
+          <th>Charge </th>
+          <th>Ratings</th>
+      </tr>
+    </tbody>
+    </table>
     {this.state.profiles.map(profile => {
         return <Profile 
           key={profile.id}

@@ -20,41 +20,46 @@ let profiles = [
   }
 ]
 module.exports = {
-  get: (req, res) => res.send(profiles),
+
+  get: (req, res) => {
+
+    let newProfiles = profiles;
+    if(req.query.profileTitle) {
+      newProfiles = profiles.filter( function(el){
+        return el.profileTitle === req.query.profileTitle;
+      })
+      res.send(newProfiles)
+    }
+    res.send(profiles)
+  },
 
   create: (req, res) => {
     let newProfile = req.body
     newProfile.id = id++
 
     profiles.push(newProfile)
-    res.send(profiles)
+    res.status(200).send(profiles)
   },
+
   update: (req, res) => {
-    //console.log(req.params)
     let { id } = req.params
     let updateProfile = req.body
     updateProfile.id = id
-    //console.log(updateProfile.id)
 
     let index = profiles.findIndex(a => +a.id === +id)
     
     profiles.splice(index, 1, updateProfile)
-    res.send(profiles)
+    res.status(200).send(profiles)
   },
   delete: (req, res) => {
-    //console.log(req.params)
     let { id } = req.params
     let updateProfile = req.body
     updateProfile.id = id
-    //console.log(updateProfile.id)
 
     let index = profiles.findIndex(a => +a.id === +id)
     
     profiles.splice(index, 1)
-    res.send(profiles)
-    // console.log(deleteProfile.id)
-    // console.log(id)
-    // console.log(index)
+    res.status(200).send(profiles)
   }
 
   }

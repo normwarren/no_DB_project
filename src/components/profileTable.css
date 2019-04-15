@@ -1,0 +1,45 @@
+table.ProfileTable {
+  border: 1px solid #EBFFFD;
+  background-color: #FCFCFC;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.ProfileTable td, table.ProfileTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.ProfileTable tbody td {
+  font-size: 14px;
+  color: #333333;
+}
+table.ProfileTable thead {
+    border-bottom: 1px solid #444444;
+}
+table.ProfileTable thead th {
+  font-size: 16px;
+  font-weight: normal;
+  color: #1E1E1E;
+}
+table.ProfileTable tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+}
+table.ProfileTable tfoot td {
+  font-size: 14px;
+}
+table.ProfileTable tfoot .links {
+  text-align: right;
+}
+table.ProfileTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
